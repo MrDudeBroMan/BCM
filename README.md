@@ -1,0 +1,2 @@
+# BCM
+content-assets
