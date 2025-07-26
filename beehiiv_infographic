@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Solopreneur's Beehiiv Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-step {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+        .flow-step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 1.25rem;
+            top: 2rem;
+            bottom: -1rem;
+            width: 2px;
+            background-color: #E5E7EB;
+        }
+        .flow-step::after {
+            content: '►';
+            position: absolute;
+            left: 0.75rem;
+            top: 0.5rem;
+            font-size: 1.5rem;
+            color: #4F46E5;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border-left-color: #4F46E5;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900">The Solopreneur's Beehiiv Playbook</h1>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="intro" class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Build a Profitable Business on Beehiiv</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">A step-by-step visual guide for solopreneurs to maximize, monetize, and scale their content or service business using Beehiiv's powerful, integrated platform.</p>
+        </section>
+
+        <section id="why-beehiiv" class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-gray-900">Part 1: Why Beehiiv?</h3>
+                <p class="text-gray-600 mt-2">Beehiiv isn't just a newsletter tool; it's an integrated growth engine. Here's how it compares.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">Platform Monetization Model Comparison</h4>
+                    <p class="text-gray-600 mb-4">A key differentiator for serious solopreneurs is how platforms handle revenue. Beehiiv's 0% platform fee on subscriptions is a significant advantage for profitability and scale.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="platformComparisonChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">The Solopreneur's First 7 Days</h4>
+                    <p class="text-gray-600 mb-4">Follow this high-impact workflow to establish a professional brand and optimize your publication for growth from day one.</p>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-700">
+                        <li><span class="font-semibold">Sign-up & Select Plan:</span> Start with the generous free "Launch" plan for up to 2,500 subscribers.</li>
+                        <li><span class="font-semibold">Configure Custom Domain:</span> Instantly boost professionalism and brand ownership (free on all plans).</li>
+                        <li><span class="font-semibold">Establish Brand Kit:</span> Set logos, colors, and fonts for consistency across your website and emails.</li>
+                        <li><span class="font-semibold">Customize Templates:</span> Design reusable email and website templates to streamline your workflow.</li>
+                        <li><span class="font-semibold">Activate Welcome Email:</span> Customize the most-opened email you'll ever send to make a strong first impression.</li>
+                        <li><span class="font-semibold">Import Audience:</span> If migrating, carefully import your existing list via CSV for a smooth transition.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="business-models" class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-gray-900">Part 2: Your Business Blueprint</h3>
+                <p class="text-gray-600 mt-2">Beehiiv supports two primary business models. Choose the path that fits your expertise.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-900">Content-Driven Business</h4>
+                    <p class="text-gray-600 mb-4">Focus on a hyper-niche and create irreplaceable value. The goal is 1,000 true fans, not mass appeal.</p>
+                    <div class="space-y-4">
+                        <div class="flow-step">
+                            <h5 class="font-semibold text-indigo-700">Dominate a Hyper-Niche</h5>
+                            <p class="text-sm text-gray-600">Solve a specific problem for a passionate audience.</p>
+                        </div>
+                        <div class="mt-4">
+                            <label for="niche-topic" class="block text-sm font-medium text-gray-700">Enter a broad topic:</label>
+                            <input type="text" id="niche-topic" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="e.g., Personal Finance">
+                            <button id="generate-niche-btn" class="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                ✨ Generate Niche Ideas
+                            </button>
+                            <div id="niche-results-loader" class="hidden mt-4 flex justify-center"><div class="spinner"></div></div>
+                            <div id="niche-results" class="mt-4 space-y-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-2 text-gray-900">Service-Based Business</h4>
+                    <p class="text-gray-600 mb-4">Use your newsletter to build authority, nurture leads, and convert expertise into clients.</p>
+                    <div class="space-y-4">
+                        <div class="flow-step">
+                            <h5 class="font-semibold text-indigo-700">Educate, Don't Sell</h5>
+                            <p class="text-sm text-gray-600">Generously share expertise to build trust and authority.</p>
+                        </div>
+                        <div class="flow-step">
+                            <h5 class="font-semibold text-indigo-700">Stay Top of Mind</h5>
+                            <p class="text-sm text-gray-600">Consistent content ensures you're the first choice when a need arises.</p>
+                        </div>
+                        <div class="flow-step">
+                            <h5 class="font-semibold text-indigo-700">Weave in Soft & Hard Sells</h5>
+                            <p class="text-sm text-gray-600">Earn the right to promote services after providing value.</p>
+                        </div>
+                        <div class="flow-step">
+                            <h5 class="font-semibold text-indigo-700">Funnel Leads</h5>
+                            <p class="text-sm text-gray-600">Guide subscribers to a clear call-to-action (e.g., "Book a Call").</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="monetization" class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-gray-900">Part 3: The Monetization Flywheel</h3>
+                <p class="text-gray-600 mt-2">Diversify your income with Beehiiv's suite of monetization tools. Each stream can fund the next, creating a cycle of growth.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 md:col-span-2">
+                     <h4 class="text-xl font-semibold mb-4 text-gray-900">Multi-Stream Revenue Potential</h4>
+                    <p class="text-gray-600 mb-4">Solopreneurs should not rely on a single income source. Beehiiv's platform supports a phased approach, allowing you to activate new revenue streams as your audience grows. This chart shows the relative potential and required audience size for each method.</p>
+                    <div class="chart-container h-96 md:h-[500px]">
+                        <canvas id="monetizationBubbleChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">The Path to Profitability</h4>
+                     <p class="text-gray-600 mb-4">Start with low-friction options and reinvest earnings to unlock more lucrative streams.</p>
+                    <div class="relative p-4 border-l-2 border-indigo-500 space-y-6">
+                        <div class="relative">
+                            <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[2.5rem] top-1"></div>
+                            <h5 class="font-bold text-lg">Phase 1: Foundation (0 - 1,000 Subs)</h5>
+                            <p class="text-gray-600">Focus on growth. Monetize with <span class="font-semibold">Affiliate Links</span> and the <span class="font-semibold">Beehiiv Partner Program</span>.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[2.5rem] top-1"></div>
+                            <h5 class="font-bold text-lg">Phase 2: Early Revenue (1,000+ Subs)</h5>
+                            <p class="text-gray-600">Upgrade to unlock <span class="font-semibold">Boosts</span> and the <span class="font-semibold">Ad Network</span> for more consistent income.</p>
+                        </div>
+                         <div class="relative">
+                            <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[2.5rem] top-1"></div>
+                            <h5 class="font-bold text-lg">Phase 3: High-Value (Established Audience)</h5>
+                            <p class="text-gray-600">Launch <span class="font-semibold">Paid Subscriptions</span>, sell <span class="font-semibold">Digital Products</span>, and secure <span class="font-semibold">Direct Sponsorships</span>.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">Revenue Breakdown of a Niche Newsletter</h4>
+                    <p class="text-gray-600 mb-4">This example shows how a successful niche newsletter with a dedicated audience might diversify its income streams. Direct sponsorships and premium subscriptions often become the largest contributors over time.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="revenueBreakdownChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scaling" class="mb-16">
+            <div class="text-center mb-10">
+                <h3 class="text-3xl font-bold text-gray-900">Part 4: Scaling with Automation</h3>
+                <p class="text-gray-600 mt-2">True scale is achieved when systems work for you. Use automations and referrals to grow your business autonomously.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">The Welcome Series</h4>
+                    <p class="text-gray-600">Onboard new subscribers, set expectations, and drive immediate engagement with an automated multi-part welcome sequence.</p>
+                     <div class="mt-4">
+                        <label for="welcome-email-topic" class="block text-sm font-medium text-gray-700">Newsletter Topic & Audience:</label>
+                        <textarea id="welcome-email-topic" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="e.g., A weekly newsletter for busy parents with tips on healthy, quick meals."></textarea>
+                        <button id="generate-welcome-btn" class="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                           ✨ Draft Welcome Email
+                        </button>
+                        <div id="welcome-results-loader" class="hidden mt-4 flex justify-center"><div class="spinner"></div></div>
+                        <div id="welcome-results" class="hidden mt-4 p-4 bg-gray-100 rounded-md"></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">Re-engagement Campaign</h4>
+                    <p class="text-gray-600">Automatically identify and win back inactive subscribers to keep your list clean and your deliverability high.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">Targeted Upsell Sequence</h4>
+                    <p class="text-gray-600">Use subscriber behavior (like link clicks) to trigger personalized sales pitches for your products or services.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 lg:col-span-3">
+                    <h4 class="text-xl font-semibold mb-4 text-gray-900">The Referral Program Flywheel</h4>
+                    <p class="text-gray-600 mb-6">Turn your most loyal readers into your best marketers. Beehiiv's native referral program automates this powerful growth channel.</p>
+                    <div class="flex flex-col md:flex-row justify-around items-center text-center gap-y-4">
+                        <div class="flex flex-col items-center p-2">
+                            <div class="text-5xl mb-2">💌</div>
+                            <h5 class="font-bold">Subscriber Shares</h5>
+                            <p class="text-sm text-gray-600 max-w-xs">A loyal reader shares their unique referral link.</p>
+                        </div>
+                        <div class="text-4xl text-indigo-400 md:hidden">↓</div>
+                        <div class="hidden md:block text-4xl text-indigo-400">→</div>
+                        <div class="flex flex-col items-center p-2">
+                            <div class="text-5xl mb-2">📈</div>
+                            <h5 class="font-bold">New Subscriber Joins</h5>
+                            <p class="text-sm text-gray-600 max-w-xs">A new reader signs up through the link.</p>
+                        </div>
+                        <div class="text-4xl text-indigo-400 md:hidden">↓</div>
+                        <div class="hidden md:block text-4xl text-indigo-400">→</div>
+                        <div class="flex flex-col items-center p-2">
+                            <div class="text-5xl mb-2">🎁</div>
+                            <h5 class="font-bold">Reward Unlocked</h5>
+                            <p class="text-sm text-gray-600 max-w-xs">The original subscriber earns a reward (e.g., exclusive content).</p>
+                        </div>
+                        <div class="text-4xl text-indigo-400 md:hidden">↓</div>
+                        <div class="hidden md:block text-4xl text-indigo-400">→</div>
+                        <div class="flex flex-col items-center p-2">
+                            <div class="text-5xl mb-2">🔁</div>
+                            <h5 class="font-bold">Cycle Repeats</h5>
+                            <p class="text-sm text-gray-600 max-w-xs">Increased loyalty encourages more sharing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Let's Go Work From Home. All rights reserved.</p>
+        <p class="text-sm text-gray-400 mt-2">This infographic was created to visualize the 'Solopreneur's Playbook for Building a Profitable Business on Beehiiv'.</p>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            primary: '#4F46E5',   // Indigo 600
+            secondary: '#10B981', // Emerald 500
+            accent: '#F59E0B',    // Amber 500
+            neutral: '#6B7280',   // Gray 500
+            light: '#D1D5DB',     // Gray 300
+            dark: '#1F2937'       // Gray 800
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        const defaultTooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('platformComparisonChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Beehiiv', 'Substack', 'ConvertKit'],
+                datasets: [{
+                    label: 'Platform Fee on $5,000/mo Subscription Revenue',
+                    data: [0, 500, 0],
+                    backgroundColor: [vibrantPalette.primary, vibrantPalette.accent, vibrantPalette.secondary],
+                    borderColor: [vibrantPalette.primary, vibrantPalette.accent, vibrantPalette.secondary],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...defaultTooltipCallback,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    ...defaultTooltipCallback.plugins,
+                    title: {
+                        display: true,
+                        text: 'Monthly Platform Fees Comparison'
+                    },
+                    subtitle: {
+                        display: true,
+                        text: 'Beehiiv & ConvertKit charge fixed fees, Substack takes 10%.',
+                        padding: {
+                            bottom: 10
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('monetizationBubbleChart'), {
+            type: 'bubble',
+            data: {
+                labels: [
+                    'Affiliate Links', 'Beehiiv Partner Program', 'Beehiiv Boosts', 
+                    'Ad Network', 'Digital Products', 'Direct Sponsorships', 'Paid Subscriptions'
+                ],
+                datasets: [{
+                    label: 'Monetization Method',
+                    data: [
+                        { x: 1, y: 2, r: 15 }, 
+                        { x: 2, y: 3, r: 15 }, 
+                        { x: 3, y: 4, r: 20 }, 
+                        { x: 4, y: 5, r: 25 }, 
+                        { x: 5, y: 8, r: 35 }, 
+                        { x: 6, y: 9, r: 40 }, 
+                        { x: 7, y: 10, r: 45 }, 
+                    ],
+                    backgroundColor: [
+                        vibrantPalette.light, vibrantPalette.light, vibrantPalette.secondary,
+                        vibrantPalette.secondary, vibrantPalette.primary, vibrantPalette.primary, vibrantPalette.primary
+                    ],
+                    borderColor: vibrantPalette.dark,
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                ...defaultTooltipCallback,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Required Audience Size / Effort'
+                        },
+                        min: 0,
+                        max: 8,
+                        ticks: { display: false }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Relative Revenue Potential'
+                        },
+                         min: 0,
+                        max: 12,
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.chart.data.labels[context.dataIndex];
+                                return label;
+                            },
+                            title: function() {
+                                return '';
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('revenueBreakdownChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Direct Sponsorships', 'Paid Subscriptions', 'Ad Network', 'Affiliate Links', 'Boosts'],
+                datasets: [{
+                    label: 'Revenue Source',
+                    data: [45, 35, 10, 5, 5],
+                    backgroundColor: [
+                        vibrantPalette.primary,
+                        vibrantPalette.secondary,
+                        vibrantPalette.accent,
+                        vibrantPalette.neutral,
+                        vibrantPalette.light
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...defaultTooltipCallback,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...defaultTooltipCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Example Annual Revenue Sources'
+                    }
+                }
+            }
+        });
+
+        // Gemini API Integration
+        const generateNicheBtn = document.getElementById('generate-niche-btn');
+        const nicheTopicInput = document.getElementById('niche-topic');
+        const nicheResultsContainer = document.getElementById('niche-results');
+        const nicheLoader = document.getElementById('niche-results-loader');
+
+        const generateWelcomeBtn = document.getElementById('generate-welcome-btn');
+        const welcomeTopicInput = document.getElementById('welcome-email-topic');
+        const welcomeResultsContainer = document.getElementById('welcome-results');
+        const welcomeLoader = document.getElementById('welcome-results-loader');
+
+        async function callGemini(prompt, loader, button, resultsContainer) {
+            loader.classList.remove('hidden');
+            button.disabled = true;
+            resultsContainer.innerHTML = '';
+            if(resultsContainer.id === 'welcome-results') resultsContainer.classList.add('hidden');
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    return text.replace(/\n/g, '<br>');
+                } else {
+                    return "Sorry, I couldn't generate a response. Please try again.";
+                }
+            } catch (error) {
+                console.error("Gemini API call error:", error);
+                return "An error occurred. Please check the console for details.";
+            } finally {
+                loader.classList.add('hidden');
+                button.disabled = false;
+            }
+        }
+
+        generateNicheBtn.addEventListener('click', async () => {
+            const topic = nicheTopicInput.value;
+            if (!topic) {
+                nicheResultsContainer.innerHTML = '<p class="text-red-500">Please enter a topic.</p>';
+                return;
+            }
+            const prompt = `Generate 3 distinct, hyper-niche newsletter ideas based on the broad topic of "${topic}". For each idea, provide a catchy name, a one-sentence description of the target audience, and a unique angle or value proposition. Format each idea clearly.`;
+            const response = await callGemini(prompt, nicheLoader, generateNicheBtn, nicheResultsContainer);
+            nicheResultsContainer.innerHTML = response;
+        });
+
+        generateWelcomeBtn.addEventListener('click', async () => {
+            const description = welcomeTopicInput.value;
+            if (!description) {
+                welcomeResultsContainer.innerHTML = '<p class="text-red-500">Please describe your newsletter.</p>';
+                welcomeResultsContainer.classList.remove('hidden');
+                return;
+            }
+            const prompt = `Write a friendly and effective welcome email for a new subscriber to a newsletter described as: "${description}". The email should: 1. Have a clear, engaging subject line. 2. Warmly welcome the subscriber. 3. Briefly restate the newsletter's value proposition. 4. Set expectations for content and frequency. 5. End with a friendly closing. Format the output with "Subject:" and then the email body.`;
+            const response = await callGemini(prompt, welcomeLoader, generateWelcomeBtn, welcomeResultsContainer);
+            welcomeResultsContainer.innerHTML = response;
+            welcomeResultsContainer.classList.remove('hidden');
+        });
+
+    </script>
+</body>
+</html>
